@@ -13,8 +13,6 @@ function getWeather(event) {
   event.preventDefault();
   let city = input.value.toLowerCase();
 
-  console.log(`https://www.metaweather.com/api/location/search/?query=${city}`);
-
   fetch(
     `https://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/search/?query=${city}`
   )
