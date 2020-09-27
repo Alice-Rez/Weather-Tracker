@@ -29,6 +29,8 @@ async function getWeather(event) {
   );
   let locationData = await responseLocation.json();
 
+  console.log(locationData);
+
   if (locationData.length === 0) {
     $("#results").text("Invalid Input! Location not found");
     $(".loader").css("display", "none");

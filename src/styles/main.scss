@@ -5,8 +5,12 @@ body * {
   box-sizing: border-box;
 }
 
-h1 {
-  text-align: center;
+header {
+  height: 30vh;
+
+  h1 {
+    text-align: center;
+  }
 }
 
 figure,
@@ -32,7 +36,8 @@ button {
   justify-content: space-between;
 
   &__card {
-    width: 300px;
+    width: 250px;
+    height: 600px;
     border: solid 1px black;
     display: grid;
     justify-items: center;
