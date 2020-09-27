@@ -4,3 +4,43 @@ body,
 body * {
   box-sizing: border-box;
 }
+
+h1 {
+  text-align: center;
+}
+
+figure,
+form {
+  display: grid;
+  place-items: center;
+}
+
+input,
+button {
+  width: 300px;
+  margin-bottom: 1em;
+  padding: 1em;
+}
+
+.loader {
+  display: none;
+}
+
+.weather {
+  display: none;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  &__card {
+    width: 300px;
+    border: solid 1px black;
+    display: grid;
+    justify-items: center;
+    margin: auto;
+    margin-bottom: 2em;
+  }
+
+  img {
+    width: 75px;
+  }
+}

@@ -8,10 +8,61 @@
   </head>
 
   <body>
+    <header>
+      <h1>Weather Tracker</h1>
+    </header>
     <main class="container">
-      <input type="text" name="city" id="city" />
-      <button type="submit" id="submit">Submit</button>
+      <form class="form">
+        <input type="text" name="city" id="city" placeholder="Weather in..." />
+        <button type="submit" id="submit">Get Weather</button>
+      </form>
+      <figure>
+        <img class="loader" src="./images/loader.gif" alt="loader" />
+      </figure>
       <div id="results"></div>
     </main>
+
+    <script id="card-template" type="text/x-handlebars-template">
+      <div class="weather">
+        {{#each weatherData}}
+          <div class="weather__card">
+            <p>
+              {{applicable_date}}
+            </p>
+            <h2>
+              {{day}}
+            </h2>
+            <figure>
+              <img src={{img_source}} alt="" />
+            </figure>
+            <p>
+              {{weather_state_name}}
+            </p>
+            <p>
+              Max:
+              <span class="temperature">
+                {{max_temp}}
+              </span>
+              °C
+            </p>
+            <p>
+              Min:
+              <span class="temperature">
+                {{min_temp}}
+              </span>
+              °C
+            </p>
+            {{#if wind_img}}
+              <figure>
+                <img src={{wind_img}} alt="" />
+              </figure>
+              <p>
+                {{wind_speed}} km/h
+              </p>
+            {{/if}}
+          </div>
+        {{/each}}
+      </div>
+    </script>
   </body>
 </html>

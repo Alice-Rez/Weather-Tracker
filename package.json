@@ -38,6 +38,9 @@
     "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
-    "bootstrap": "^4.5.2"
+    "babel-polyfill": "^6.26.0",
+    "bootstrap": "^4.5.2",
+    "handlebars": "^4.7.6",
+    "jquery": "^3.5.1"
   }
 }
