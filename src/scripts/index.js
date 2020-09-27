@@ -32,7 +32,9 @@ async function getWeather(event) {
   console.log(locationData);
 
   if (locationData.length === 0) {
-    $("#results").text("Invalid Input! Location not found");
+    $("#results").html(
+      '<p class="error">Invalid Input! Location not found</p>'
+    );
     $(".loader").css("display", "none");
   } else {
     // ---- FETCHING WEATHER DATA -----
@@ -91,7 +93,23 @@ async function getWeather(event) {
   }
 }
 
-function styleWeather() {}
+function styleWeather() {
+  let temperatures = document.querySelectorAll(".temperature");
+
+  for (let item of temperatures) {
+    let value = item.textContent;
+
+    if (value <= 0) {
+      item.style.color = "blue";
+    } else if (value > 0 && value < 16) {
+      item.style.color = "green";
+    } else if (value > 15 && value < 30) {
+      item.style.color = "orange";
+    } else if (value > 29) {
+      item.style.color = "red";
+    }
+  }
+}
 
 function chooseDay(string) {
   let weekdays = [

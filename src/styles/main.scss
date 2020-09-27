@@ -3,10 +3,22 @@
 body,
 body * {
   box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
 header {
   height: 30vh;
+
+  @media screen and (min-width: 1px) {
+    background-image: url("../images/hero-mobile.jpg");
+    background-size: cover;
+    background-position: center;
+  }
+
+  @media screen and (min-width: 1024px) {
+    background-image: url("../images/hero-desktop.jpg");
+  }
 
   h1 {
     text-align: center;
@@ -17,6 +29,7 @@ figure,
 form {
   display: grid;
   place-items: center;
+  margin: 3em;
 }
 
 input,
@@ -30,6 +43,13 @@ button {
   display: none;
 }
 
+.error {
+  text-align: center;
+  color: red;
+  font-weight: bold;
+  font-size: 2rem;
+}
+
 .weather {
   display: none;
   flex-wrap: wrap;
@@ -38,11 +58,16 @@ button {
   &__card {
     width: 250px;
     height: 600px;
+    padding: 1.5em;
     border: solid 1px black;
     display: grid;
     justify-items: center;
     margin: auto;
     margin-bottom: 2em;
+
+    h2 {
+      margin: 0;
+    }
   }
 
   img {
