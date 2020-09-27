@@ -9,6 +9,8 @@ body * {
 
 header {
   height: 30vh;
+  display: grid;
+  align-items: flex-end;
 
   @media screen and (min-width: 1px) {
     background-image: url("../images/hero-mobile.jpg");
@@ -22,20 +24,22 @@ header {
 
   h1 {
     text-align: center;
+    color: #6c462f;
   }
 }
 
 figure,
 form {
-  display: grid;
-  place-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   margin: 3em;
 }
 
 input,
 button {
   width: 300px;
-  margin-bottom: 1em;
+  margin: 0em 1em 1em 1em;
   padding: 1em;
 }
 
@@ -68,6 +72,11 @@ button {
     h2 {
       margin: 0;
     }
+  }
+
+  .temperature {
+    font-size: 2rem;
+    font-weight: 900;
   }
 
   img {

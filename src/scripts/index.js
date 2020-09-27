@@ -100,13 +100,13 @@ function styleWeather() {
     let value = item.textContent;
 
     if (value <= 0) {
-      item.style.color = "blue";
+      item.style.color = "#64B6E7";
     } else if (value > 0 && value < 16) {
-      item.style.color = "green";
+      item.style.color = "#2E6C45";
     } else if (value > 15 && value < 30) {
-      item.style.color = "orange";
+      item.style.color = "#E79564";
     } else if (value > 29) {
-      item.style.color = "red";
+      item.style.color = "#A52A2A";
     }
   }
 }
