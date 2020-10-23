@@ -16,7 +16,7 @@ async function getWeather(event) {
 
   // ----- LOADER ACTIVATING -----
 
-  $(".loader").css("display", "block");
+  $(".loader").css("display", "grid");
 
   // ----- FETCHING LOCATION -----
 
@@ -50,9 +50,9 @@ async function getWeather(event) {
 
     weatherData.map((element, index) => {
       if (index === 0) {
-        element.day = "today";
+        element.day = "Today";
       } else if (index === 1) {
-        element.day = "tomorrow";
+        element.day = "Tomorrow";
       } else {
         element.day = chooseDay(element.applicable_date.substr(0, 10));
         console.log(element.day);
@@ -65,12 +65,7 @@ async function getWeather(event) {
         .reverse()
         .join(".");
       element.img_source = `https://www.metaweather.com/static/img/weather/${element.weather_state_abbr}.svg`;
-
-      if (element.wind_speed > 5) {
-        element.wind_img =
-          "https://grid.gograph.com/wind-measurement-instrument-icon-eps-illustration_gg78945909.jpg";
-        element.wind_speed = Math.round(element.wind_speed * 1.60934);
-      }
+      element.wind_speed = Math.round(element.wind_speed * 1.60934);
     });
 
     // ----- INJECTING DATA TO HTML USING HANDLEBARS -----
@@ -107,6 +102,19 @@ function styleWeather() {
       item.style.color = "#E79564";
     } else if (value > 29) {
       item.style.color = "#A52A2A";
+    }
+  }
+
+  let winds = document.querySelectorAll(".wind");
+  let rotors = document.querySelectorAll(".rotor");
+
+  for (let i = 0; i < winds.length; i++) {
+    let value = winds[i].textContent;
+
+    if (value < 10) {
+      rotors[i].style.fill = "#00697D";
+    } else {
+      rotors[i].style.fill = "#A52A2A";
     }
   }
 }
