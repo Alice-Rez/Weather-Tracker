@@ -69,11 +69,17 @@ button {
   margin: 0em 1em 1em 1em;
   padding: 1em;
   font-family: "Lato", sans-serif;
+  box-shadow: 2.5px 2.5px 7px rgba(0, 0, 0, 0.2),
+    -5px -5px 15px rgba(255, 255, 255, 0.2);
+}
+
+input {
+  border-color: transparent;
 }
 
 button {
   text-transform: uppercase;
-  background-color: grey;
+  background-color: #353243;
   color: white;
   font-weight: 900;
   border: none;
@@ -111,6 +117,7 @@ button {
 
     h2 {
       margin: 0;
+      color: #353243;
     }
   }
 
