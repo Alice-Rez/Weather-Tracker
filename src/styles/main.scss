@@ -48,6 +48,10 @@ button {
   font-family: "Lato", sans-serif;
 }
 
+button {
+  text-transform: uppercase;
+}
+
 .loader {
   display: none;
   place-items: center;
