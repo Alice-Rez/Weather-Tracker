@@ -32,9 +32,7 @@ async function getWeather(event) {
   console.log(locationData);
 
   if (locationData.length === 0) {
-    $("#results").html(
-      '<p class="error">Invalid Input! Location not found</p>'
-    );
+    $("#results").html('<p class="error">Location was not found :(</p>');
     $(".loader").css("display", "none");
   } else {
     // ---- FETCHING WEATHER DATA -----
@@ -111,10 +109,14 @@ function styleWeather() {
   for (let i = 0; i < winds.length; i++) {
     let value = winds[i].textContent;
 
-    if (value < 10) {
+    if (value < 39) {
       rotors[i].style.fill = "#00697D";
+    } else if (value < 62) {
+      rotors[i].style.fill = "#2E6C45";
+    } else if (value < 89) {
+      rotors[i].style.fill = "#E79564";
     } else {
-      rotors[i].style.fill = "#A52A2A";
+      rotors[i].style.fill = "#79139c";
     }
   }
 }
