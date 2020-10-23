@@ -8,6 +8,12 @@ body * {
   font-family: "Lato", sans-serif;
 }
 
+body {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: auto auto 1fr;
+}
+
 header {
   height: 30vh;
   display: grid;
@@ -117,6 +123,7 @@ button {
 
     h2 {
       margin: 0;
+      font-size: 2rem;
       color: #353243;
     }
   }
@@ -129,5 +136,18 @@ button {
   img,
   svg {
     width: 75px;
+  }
+}
+
+footer {
+  margin: 1em 0;
+  margin-left: 1em;
+  font-size: 0.8rem;
+  justify-self: center;
+  align-self: end;
+
+  .logo {
+    width: 12%;
+    transform: translateY(40%);
   }
 }
