@@ -26,9 +26,28 @@ header {
   h1 {
     font-family: "Megrim", cursive;
     font-weight: 900;
-    font-size: 7rem;
+    width: 50%;
+    max-width: 600px;
+    font-size: 3rem;
     text-align: center;
     color: #ff9352;
+    margin: 1.5rem;
+
+    @media screen and (min-width: 400px) {
+      font-size: 4rem;
+    }
+
+    @media screen and (min-width: 600px) {
+      font-size: 5rem;
+    }
+
+    @media screen and (min-width: 1024px) {
+      font-size: 6rem;
+    }
+
+    @media screen and (min-width: 1440px) {
+      font-size: 7rem;
+    }
   }
 }
 
@@ -37,7 +56,11 @@ form {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin: 3em;
+  margin: 1.5em;
+
+  @media screen and (min-width: 1024px) {
+    margin: 3em;
+  }
 }
 
 input,
@@ -50,6 +73,10 @@ button {
 
 button {
   text-transform: uppercase;
+  background-color: grey;
+  color: white;
+  font-weight: 900;
+  border: none;
 }
 
 .loader {
