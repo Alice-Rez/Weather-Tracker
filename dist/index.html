@@ -1,0 +1,58 @@
+<!doctype html> <html lang=en> <head> <meta charset=UTF-8 /> <meta name=viewport content="width=device-width,initial-scale=1"/> <meta http-equiv=X-UA-Compatible content="ie=edge"/> <title></title> <link href="styles/main.css" rel="stylesheet"></head> <body> <header> <h1>Weather Tracker</h1> </header> <main class=container> <form class=form> <input type=text name=city id=city placeholder="Weather in..."/> <button type=submit id=submit>Get Weather</button> </form> <figure class=loader> <img src=../img/loader.gif alt=loader /> </figure> <div id=results></div> </main> <footer> <p> Data provided by <a href=https://www.metaweather.com/api/ >MetaWeather API</a> </p> <p> &#169;2020 Made by <img class=logo src=../fonts/logo.svg alt="Alice rez logo"/> Alice Rez </p> </footer> <script id=card-template type=text/x-handlebars-template> <div class="weather">
+        {{#each weatherData}}
+          <div class="weather__card">
+            <p>
+              {{applicable_date}}
+            </p>
+            <h2>
+              {{day}}
+            </h2>
+            <figure>
+              <img src={{img_source}} alt="" />
+            </figure>
+            <p>
+              Max:
+              <span class="temperature">
+                {{max_temp}}
+              </span>
+              °C
+            </p>
+            <p>
+              Min:
+              <span class="temperature">
+                {{min_temp}}
+              </span>
+              °C
+            </p>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              version="1.1"
+              id="SVGRoot"
+              viewBox="0 0 16 16"
+              role="presentation"
+              class="wind-indicator"
+            >
+              <g id="layer1" stroke-width=".032">
+                <path
+                  class="rotor"
+                  d="M11.6113 9.2736L9.8218 8.242l-.1061-.384c-.0584-.2112-.1063-.3924-.1065-.4028-.0004-.0201.7086-.2212.7801-.2212.068 0 1.3557.7597 1.6054.947.4706.3531.8933.8654 1.1629 1.4094.141.2846.3018.7158.2665.7152-.0128-.0002-.8286-.4646-1.8128-1.032zm-8.8965.1168c-.2475-.0446-.2992-.0619-.2709-.0901.0238-.0238 3.3998-1.9751 3.5059-2.0264.0949-.0459.1242-.0425.488.0566.2129.058.3867.114.3864.1245-.0004.0105-.0475.1917-.1047.4027l-.1039.3837-.5914.3452c-.9246.5397-1.3153.7068-1.8882.8076-.3407.06-1.079.058-1.4212-.0038zm5.2054-4.661l-.2954-.2966v-.7682c0-1.0998.0706-1.5456.3455-2.1833.1362-.316.4608-.8221.6921-1.0793l.144-.16.0012 2.0967.0012 2.0966-.2966.2954-.2967.2954-.2953-.2967z"
+                  id="path966-7"
+                  fill="#000"
+                  fill-opacity="1"
+                ></path>
+                <path
+                  d="M6.1528 15.778v-.288h4.128v.576h-4.128zm1.1984-2.5119l.2576-1.6159h.609l.609-.0002.1045.664c.0575.3652.1733 1.0924.2573 1.616l.1528.952H7.0936l.2576-1.6158zm.3711-2.296c.0008-.0397.019-.1657.0403-.28l.0387-.208h.831l.0388.208c.072.386.116.352-.4543.352-.4934 0-.496-.0004-.4945-.072zm.1905-1.1443c0-.0354.0576-.424.128-.8638.0704-.4397.128-.8067.128-.8157 0-.009.0216-.0163.048-.0163s.048.0063.048.014c0 .0076.0576.3712.1279.808.0703.4367.1279.8264.128.866.0001.0697-.0099.072-.3039.072-.283 0-.304-.0044-.304-.0642zm.0638-2.3318c-.2273-.0745-.4523-.268-.5597-.4812-.0719-.1424-.0966-.4321-.0512-.5998.1024-.3786.4576-.651.8488-.651.5176 0 .9207.4426.8739.9593-.0091.1003-.0413.2315-.0716.2915-.077.1529-.2646.3426-.416.4207-.139.0718-.487.1055-.6242.0605z"
+                  id="path966"
+                  fill="#000"
+                ></path>
+              </g>
+            </svg>
+            <p>
+              <span class="wind">
+                {{wind_speed}}
+              </span>
+              km/h
+            </p>
+          </div>
+        {{/each}}
+      </div> </script> <script type="text/javascript" src="scripts/bundle.js"></script></body> </html> 
