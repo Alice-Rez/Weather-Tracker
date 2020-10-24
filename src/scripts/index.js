@@ -100,14 +100,19 @@ function styleWeather() {
     let value = item.textContent;
     let color;
 
-    if (value <= 0) {
-      color = blueLight;
-    } else if (value < 16) {
-      color = green;
-    } else if (value < 30) {
-      color = orange;
-    } else if (value > 29) {
-      color = red;
+    switch (true) {
+      case value <= 0:
+        color = blueLight;
+        break;
+      case value < 16:
+        color = green;
+        break;
+      case value < 30:
+        color = orange;
+        break;
+      case value > 29:
+        color = red;
+        break;
     }
 
     item.style.color = color;
@@ -120,18 +125,23 @@ function styleWeather() {
     let value = winds[i].textContent;
     let color;
 
-    if (value < 39) {
-      color = blueDark;
-    } else if (value < 62) {
-      color = green;
-    } else if (value < 89) {
-      color = orange;
-    } else if (value < 118) {
-      color = red;
-    } else {
-      color = red;
+    switch (true) {
+      case value < 39:
+        color = blueDark;
+        break;
+      case value < 62:
+        color = green;
+        break;
+      case value < 89:
+        color = orange;
+        break;
+      case value < 118:
+        color = red;
+        break;
+      case value >= 1180:
+        color = purple;
+        break;
     }
-
     rotors[i].style.fill = color;
   }
 }
