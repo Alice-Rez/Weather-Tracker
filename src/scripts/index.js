@@ -124,25 +124,32 @@ function styleWeather() {
   for (let i = 0; i < winds.length; i++) {
     let value = winds[i].textContent;
     let color;
+    let time;
 
     switch (true) {
       case value < 39:
         color = blueDark;
+        time = 2000;
         break;
       case value < 62:
         color = green;
+        time = 1500;
         break;
       case value < 89:
         color = orange;
+        time = 1000;
         break;
       case value < 118:
         color = red;
+        time = 500;
         break;
       case value >= 1180:
         color = purple;
+        time = 250;
         break;
     }
     rotors[i].style.fill = color;
+    rotors[i].style.animationDuration = `${time}ms`;
   }
 }
 
