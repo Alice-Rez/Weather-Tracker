@@ -120,6 +120,7 @@ function styleWeather() {
 
   let winds = document.querySelectorAll(".wind");
   let rotors = document.querySelectorAll(".rotor");
+  let cards = document.querySelectorAll(".weather__card");
 
   for (let i = 0; i < winds.length; i++) {
     let value = winds[i].textContent;
@@ -150,6 +151,12 @@ function styleWeather() {
     }
     rotors[i].style.fill = color;
     rotors[i].style.animationDuration = `${time}ms`;
+    cards[i].addEventListener("mouseover", () => {
+      for (let j = 0; j < cards.length; j++) {
+        rotors[j].style.animation = "none";
+      }
+      rotors[i].style.animation = `rotorRotation ${time}ms infinite linear`;
+    });
   }
 }
 
