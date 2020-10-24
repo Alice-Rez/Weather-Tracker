@@ -86,21 +86,31 @@ async function getWeather(event) {
   }
 }
 
+let blueLight = "#64B6E7";
+let blueDark = "#00697D";
+let green = "#2E6C45";
+let orange = "#C88C32";
+let red = "#A52A2A";
+let purple = "#79139c";
+
 function styleWeather() {
   let temperatures = document.querySelectorAll(".temperature");
 
   for (let item of temperatures) {
     let value = item.textContent;
+    let color;
 
     if (value <= 0) {
-      item.style.color = "#64B6E7";
-    } else if (value > 0 && value < 16) {
-      item.style.color = "#2E6C45";
-    } else if (value > 15 && value < 30) {
-      item.style.color = "#C88C32";
+      color = blueLight;
+    } else if (value < 16) {
+      color = green;
+    } else if (value < 30) {
+      color = orange;
     } else if (value > 29) {
-      item.style.color = "#A52A2A";
+      color = red;
     }
+
+    item.style.color = color;
   }
 
   let winds = document.querySelectorAll(".wind");
@@ -108,16 +118,21 @@ function styleWeather() {
 
   for (let i = 0; i < winds.length; i++) {
     let value = winds[i].textContent;
+    let color;
 
     if (value < 39) {
-      rotors[i].style.fill = "#00697D";
+      color = blueDark;
     } else if (value < 62) {
-      rotors[i].style.fill = "#2E6C45";
+      color = green;
     } else if (value < 89) {
-      rotors[i].style.fill = "#C88C32";
+      color = orange;
+    } else if (value < 118) {
+      color = red;
     } else {
-      rotors[i].style.fill = "#79139c";
+      color = red;
     }
+
+    rotors[i].style.fill = color;
   }
 }
 
