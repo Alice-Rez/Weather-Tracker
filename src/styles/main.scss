@@ -12,22 +12,24 @@ body {
   height: 100vh;
   display: grid;
   grid-template-rows: auto auto 1fr;
-}
-
-header {
-  height: 30vh;
-  display: grid;
-  align-items: flex-end;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 
   @media screen and (min-width: 1px) {
     background-image: url("../images/hero-mobile.jpg");
-    background-size: cover;
     background-position: center;
   }
 
   @media screen and (min-width: 1024px) {
     background-image: url("../images/hero-desktop.jpg");
   }
+}
+
+header {
+  height: 30vh;
+  display: grid;
+  align-items: flex-end;
 
   h1 {
     font-family: "Megrim", cursive;
@@ -75,7 +77,7 @@ button {
   margin: 0em 1em 1em 1em;
   padding: 1em;
   font-family: "Lato", sans-serif;
-  box-shadow: 2.5px 2.5px 7px rgba(0, 0, 0, 0.2),
+  box-shadow: 2.5px 2.5px 7px rgba(0, 0, 0, 0.5),
     -5px -5px 15px rgba(255, 255, 255, 0.2);
 }
 
@@ -94,6 +96,10 @@ button {
 .loader {
   display: none;
   place-items: center;
+
+  img {
+    width: 64px;
+  }
 }
 
 .error {
