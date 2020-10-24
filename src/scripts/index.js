@@ -96,6 +96,8 @@ let purple = "#79139c";
 function styleWeather() {
   let temperatures = document.querySelectorAll(".temperature");
 
+  // STYLING TEMPERATURES
+
   for (let item of temperatures) {
     let value = item.textContent;
     let color;
@@ -117,6 +119,8 @@ function styleWeather() {
 
     item.style.color = color;
   }
+
+  // STYLING WIND POWERPLANTS SYMBOLS
 
   let winds = document.querySelectorAll(".wind");
   let rotors = document.querySelectorAll(".rotor");
