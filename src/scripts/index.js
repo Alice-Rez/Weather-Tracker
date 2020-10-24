@@ -97,7 +97,7 @@ function styleWeather() {
     } else if (value > 0 && value < 16) {
       item.style.color = "#2E6C45";
     } else if (value > 15 && value < 30) {
-      item.style.color = "#E79564";
+      item.style.color = "#C88C32";
     } else if (value > 29) {
       item.style.color = "#A52A2A";
     }
@@ -114,7 +114,7 @@ function styleWeather() {
     } else if (value < 62) {
       rotors[i].style.fill = "#2E6C45";
     } else if (value < 89) {
-      rotors[i].style.fill = "#E79564";
+      rotors[i].style.fill = "#C88C32";
     } else {
       rotors[i].style.fill = "#79139c";
     }
