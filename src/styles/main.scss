@@ -29,7 +29,7 @@ body {
 header {
   height: 30vh;
   display: grid;
-  align-items: flex-end;
+  align-items: center;
 
   h1 {
     font-family: "Megrim", cursive;
@@ -147,6 +147,15 @@ button {
   }
 }
 
+.rotor {
+  transform-origin: 51% 41.5%;
+  animation: rotorRotation 4000ms infinite linear;
+
+  @media screen and (min-width: 768px) {
+    animation: none;
+  }
+}
+
 footer {
   margin: 2em 0;
   margin-left: 1em;
@@ -158,5 +167,14 @@ footer {
   .logo {
     width: 12%;
     transform: translateY(40%);
+  }
+}
+
+@keyframes rotorRotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
   }
 }
