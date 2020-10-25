@@ -1,3 +1,5 @@
+@import "_variables.scss";
+
 @import url("https://fonts.googleapis.com/css2?family=Lato&family=Megrim&display=swap");
 
 body,
@@ -145,14 +147,14 @@ button {
   svg {
     width: 75px;
   }
-}
 
-.rotor {
-  transform-origin: 51% 41.5%;
-  animation: rotorRotation 4000ms infinite linear;
+  .rotor {
+    transform-origin: 51% 41.5%;
+    animation: rotorRotation 4000ms infinite linear;
 
-  @media screen and (min-width: 768px) {
-    animation: none;
+    @media screen and (min-width: 768px) {
+      animation: none;
+    }
   }
 }
 
