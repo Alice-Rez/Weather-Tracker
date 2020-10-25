@@ -41,3 +41,9 @@ Application uses [MetaWeather API](https://www.metaweather.com/api/) as a source
   5. address to the relevant weather status image is added using weather state abbreviation obtained from API
 - results of manipulation are injected to the html using handlebars
 - the injected data are then styled according to the temperature value/wind strength
+
+## Gallery
+
+**Fig.1:** Desktop look of the application
+
+<img align="center" src="./README-materials/image.png" width="80%">
