@@ -2,7 +2,7 @@
 
 ## Description
 
-<img align="right" src="./README-materials/image.png" width="50%">
+<img align="right" src="./README-materials/image.png" width="60%">
 
 [Live Demo](https://alice-rez.github.io/Weather-Tracker/)
 
