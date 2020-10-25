@@ -86,14 +86,14 @@ async function getWeather(event) {
   }
 }
 
-let blueLight = "#64B6E7";
-let blueDark = "#00697D";
-let green = "#2E6C45";
-let orange = "#C88C32";
-let red = "#A52A2A";
-let purple = "#79139c";
-
 function styleWeather() {
+  let blueLight = "#64B6E7";
+  let blueDark = "#00697D";
+  let green = "#2E6C45";
+  let orange = "#C88C32";
+  let red = "#A52A2A";
+  let purple = "#79139c";
+
   let temperatures = document.querySelectorAll(".temperature");
 
   // STYLING TEMPERATURES
