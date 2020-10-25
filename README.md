@@ -6,7 +6,7 @@
 
 [Live Demo](https://alice-rez.github.io/Weather-Tracker/)
 
-Application that get basic weather data for location from API, manipulate them and display them to the user, that were created in second half of the javascript in browser environment module of my web development course (so before learning React). Data are clearly displayed to allow user quick orientation:
+Project from second half of the javascript in browser environment module of my web development course (before learning React) - application that get from API basic weather data for selected location, manipulate them and display them to the user. Data are displayed with purpose to enable user quick orientation:
 
 - image describing weather status
 - 4 colors for quick distinguishing basic level of the temperature:
@@ -21,21 +21,21 @@ Application that get basic weather data for location from API, manipulate them a
   4. red for storm (89 - 117 km/h)
   5. purple for Hurricane (118 km/h and above)
 
-The wind icon is also animated to rotate faster with stronger wind. Animation is infinite in the case of the mobile version, for tablets and desktop is animation just on hover over relevant card.
+The wind icon is also animated to rotate faster with stronger wind. Animation is infinite in the case of the mobile version, for tablets and desktop is animation just on hover over relevant card (so user will be not distracted by multiple animations going in the same time).
 
 ## Implementation
 
-Application uses [MetaWeather API](https://www.metaweather.com/api/) as a source of the weather data amd also as a source for weather status images(for now, in future own SVG icons are planned).
+Application uses [MetaWeather API](https://www.metaweather.com/api/) as a source of the weather data and also as a source for weather status images (for now, in future own SVG icons are planned).
 
-**Used technologies**: Vanilla JS, DOM, asynchronous Javascript (fetch, async await), API, jquery, handlebars, SVG animation (animation of the wind icon), HTML, CSS, SASS (SCSS - variables, mixins)
+**Used technologies**: Vanilla JS, DOM, asynchronous Javascript (fetch, async await), API, jquery, handlebars, SVG + animation (animation of the wind icon), HTML, CSS, SASS (SCSS - variables, mixins)
 
 **Basic function:**
 
-- two stage API call - at first for location and then with received woid code for the weather itself
+- two stage API call - at first for location and then with received woid code for the weather info itself
 - if the location does not exist, the error message is displayed
 - otherwise, the data are basically manipulated (the manipulation is done in initial result object, so the values of the properties are overwritten):
   1. date is transformed from YYYY-MM-DD to DD.MM.YYYY
-  2. day label is added (today/tomorrow/week day)
+  2. day label is added (today/tomorrow/name of day)
   3. values of temperatures are rounded
   4. wind speed is recalculated from mph to km/h and the resulted values is rounded
   5. address to the relevant weather status image is added using weather state abbreviation obtained from API
