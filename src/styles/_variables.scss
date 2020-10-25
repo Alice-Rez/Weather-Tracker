@@ -1,1 +1,20 @@
 // COLORS
+
+$primary: #ff9352;
+$secondary: #353243;
+$opaque: rgba(255, 255, 255, 0.5);
+
+// SHADOWS
+
+$shadow-small: 2.5px 2.5px 7px rgba(0, 0, 0, 0.5),
+  -5px -5px 15px rgba(255, 255, 255, 0.2);
+
+$shadow-big: 5px 5px 15px rgba(0, 0, 0, 0.2),
+  -5px -5px 15px rgba(255, 255, 255, 0.2);
+
+// FONTS
+
+@import url("https://fonts.googleapis.com/css2?family=Lato&family=Megrim&display=swap");
+
+$font-header: "Megrim", cursive;
+$font-general: "Lato", sans-serif;
