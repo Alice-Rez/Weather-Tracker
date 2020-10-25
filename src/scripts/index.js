@@ -159,7 +159,13 @@ function styleWeather() {
       for (let j = 0; j < cards.length; j++) {
         rotors[j].style.animation = "none";
       }
-      rotors[i].style.animation = `rotorRotation ${time}ms infinite linear`;
+      rotors[
+        i
+      ].style.animation = `rotorRotation ${time}ms infinite linear forwards`;
+
+      setTimeout(() => {
+        rotors[i].style.animation = "none";
+      }, 15000);
     });
   }
 }
