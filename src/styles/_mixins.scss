@@ -1,0 +1,36 @@
+@mixin rotor-animation() {
+  transform-origin: 51% 41.5%;
+  animation: rotorRotation 4000ms infinite linear;
+
+  @media screen and (min-width: 768px) {
+    animation: none;
+  }
+
+  @keyframes rotorRotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(359deg);
+    }
+  }
+}
+
+@mixin basic-layout() {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 1.5em;
+
+  @media screen and (min-width: 1024px) {
+    margin: 3em;
+  }
+}
+
+@mixin basic-input-styling() {
+  width: 300px;
+  margin: 0em 1em 1em 1em;
+  padding: 1em;
+  font-family: $font-general;
+  box-shadow: $shadow-small;
+}
