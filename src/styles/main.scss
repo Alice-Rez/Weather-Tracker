@@ -1,4 +1,5 @@
 @import "_variables.scss";
+@import "_mixins.scss";
 
 body,
 body * {
@@ -59,37 +60,26 @@ header {
   }
 }
 
-figure,
+figure {
+  @include basic-layout;
+}
+
 form {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin: 1.5em;
+  @include basic-layout;
 
-  @media screen and (min-width: 1024px) {
-    margin: 3em;
+  input {
+    @include basic-input-styling;
+    border-color: transparent;
   }
-}
 
-input,
-button {
-  width: 300px;
-  margin: 0em 1em 1em 1em;
-  padding: 1em;
-  font-family: "Lato", sans-serif;
-  box-shadow: $shadow-small;
-}
-
-input {
-  border-color: transparent;
-}
-
-button {
-  text-transform: uppercase;
-  background-color: $secondary;
-  color: white;
-  font-weight: 900;
-  border: none;
+  button {
+    @include basic-input-styling;
+    text-transform: uppercase;
+    background-color: $secondary;
+    color: white;
+    font-weight: 900;
+    border: none;
+  }
 }
 
 .loader {
@@ -132,24 +122,19 @@ button {
       font-size: 2rem;
       color: $secondary;
     }
-  }
 
-  .temperature {
-    font-size: 2rem;
-    font-weight: 900;
-  }
+    .temperature {
+      font-size: 2rem;
+      font-weight: 900;
+    }
 
-  img,
-  svg {
-    width: 75px;
-  }
+    img,
+    svg {
+      width: 75px;
+    }
 
-  .rotor {
-    transform-origin: 51% 41.5%;
-    animation: rotorRotation 4000ms infinite linear;
-
-    @media screen and (min-width: 768px) {
-      animation: none;
+    .rotor {
+      @include rotor-animation;
     }
   }
 }
@@ -165,14 +150,5 @@ footer {
   .logo {
     width: 12%;
     transform: translateY(40%);
-  }
-}
-
-@keyframes rotorRotation {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(359deg);
   }
 }
