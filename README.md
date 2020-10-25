@@ -2,6 +2,8 @@
 
 ## Description
 
+<img align="right" src="./README-materials/image.png" width="50%">
+
 [Live Demo](https://alice-rez.github.io/Weather-Tracker/)
 
 Application that get basic weather data for location from API, manipulate them and display them to the user, that were created in second half of the javascript in browser environment module of my web development course (so before learning React). Data are clearly displayed to allow user quick orientation:
