@@ -120,7 +120,7 @@ function styleWeather() {
     item.style.color = color;
   }
 
-  // STYLING WIND POWERPLANTS SYMBOLS
+  // STYLING WIND SYMBOLS
 
   let winds = document.querySelectorAll(".wind");
   let rotors = document.querySelectorAll(".rotor");
