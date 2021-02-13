@@ -21,7 +21,7 @@ async function getWeather(event) {
   // ----- FETCHING LOCATION -----
 
   let responseLocation = await fetch(
-    `https://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/search/?query=${$(
+    `https://shielded-fjord-74144.herokuapp.com/https://www.metaweather.com/api/location/search/?query=${$(
       "#city"
     )
       .val()
@@ -46,7 +46,7 @@ async function getWeather(event) {
 
     let code = locationData[0].woeid;
     let responseWeather = await fetch(
-      `https://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/${code}`
+      `https://shielded-fjord-74144.herokuapp.com/https://www.metaweather.com/api/location/${code}`
     );
     let weatherJson = await responseWeather.json();
     let weatherData = weatherJson.consolidated_weather;
