@@ -26,7 +26,14 @@ async function getWeather(event) {
     )
       .val()
       .toLowerCase()}`
-  );
+  ).catch((err) => {
+    errorHandling();
+  });
+
+  if (responseLocation.status === 403) {
+    errorHandling();
+  }
+
   let locationData = await responseLocation.json();
 
   console.log(locationData);
@@ -186,4 +193,11 @@ function chooseDay(string) {
   console.log(day.getDay());
 
   return weekdays[day.getDay()];
+}
+
+function errorHandling() {
+  $(".loader").css("display", "none");
+  $("#results").html(
+    '<p class="error">Service is currently out of order :(</p>'
+  );
 }
